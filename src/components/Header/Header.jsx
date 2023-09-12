@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 const Header = ({ addItem }) => {
 
@@ -23,10 +22,7 @@ const Header = ({ addItem }) => {
 
     return (
         <header className='header'>
-            <div className='header-link'>
-                <Link className='link' to="/incomplete">Incomplete</Link>
-                <Link className='link' to="/completed">Completed</Link>
-            </div>
+            
             <h1 className='logo-txt'>Todo App</h1>
             <form onSubmit={handleSubmit}>
                 <input 
@@ -38,6 +34,7 @@ const Header = ({ addItem }) => {
                     required
                     autoFocus
                     className='input'
+                    maxLength={30}
                 />
                 <button className='btn' type='submit'>Add Task</button>
             </form>

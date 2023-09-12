@@ -16,7 +16,7 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 60px 400px 0px;
+  margin: 60px 20% 0px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
   min-height: 700px;
@@ -29,16 +29,23 @@ code {
   width: 100%;
 }
 
-.header-link{
+.mid-heading{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  width: 50%;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.header-link{
+  display: flex;
+  align-items: center;
 }
 
 .link{
-  font-size: large;
+  font-size: x-large;
   text-decoration: none;
+  color: #3B99FC;
+  font-weight: 700;
 }
 
 .input {
@@ -85,9 +92,67 @@ code {
 }
 
 .list{
-    list-style-type: none;
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  width: 100%;
+  list-style-type: none;
+  padding-left: 25em;
+}
+
+.list-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 50%;
+  padding: 2px;
+  margin-top: 1em;
+  border-radius: 5px;
+}
+
+.checkbox-wrapper-1 [type=checkbox].substituted {
+  margin: 0;
+  width: 0;
+  height: 0;
+  display: inline;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.checkbox-wrapper-1 [type=checkbox].substituted + label:before {
+  content: "";
+  display: inline-block;
+  vertical-align: top;
+  height: 1.15em;
+  width: 1.15em;
+  margin-right: 0.6em;
+  color: rgba(0, 0, 0, 0.275);
+  border: solid 0.06em;
+  box-shadow: 0 0 0.04em, 0 0.06em 0.16em -0.03em inset, 0 0 0 0.07em transparent inset;
+  border-radius: 0.2em;
+  background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xml:space="preserve" fill="white" viewBox="0 0 9 9"><rect x="0" y="4.3" transform="matrix(-0.707 -0.7072 0.7072 -0.707 0.5891 10.4702)" width="4.3" height="1.6" /><rect x="2.2" y="2.9" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 12.1877 2.9833)" width="6.1" height="1.7" /></svg>') no-repeat center, white;
+  
+}
+  
+.checkbox-wrapper-1 [type=checkbox].substituted:checked + label:before {
+  background-color: #3B99FC;
+  background-size: 0.75em;
+  color: rgba(0, 0, 0, 0.075);
 }
 
 .item-txt{
+  display: flex;
+  align-items: center;
   font-size:x-large;
+}
+
+.trash-icon{
+  display: flex;
+  align-items: center;
+  font-size: x-large;
+  background-color: #2b88eb;
+  color: #FFFFFF;
+  padding: 2px;
+  border-radius: 7px;
+  border-width: 0px;
 }

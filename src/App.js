@@ -6,6 +6,7 @@ import Header from './components/Header/Header';
 import useLocalStorage from './hook/useLocalStorage';
 
 
+
 function App() {
 
   const [Items, setIems] = useLocalStorage('react-todo.tasks',[]);
@@ -19,14 +20,18 @@ function App() {
     setIems(items);
   }
 
+  const deleteItem = (id) =>{
+    setIems(prevState => prevState.filter(Item => Item.id !== id));
+  }
+
   return (
     <Router>
       <div className='container'>
         <Header addItem={addItem} />
         <Routes>
-          <Route path="/" element={<IncompletePage Items={Items} updateItem={updateItem} />} />
-          <Route path="/incomplete" element={<IncompletePage Items={Items} updateItem={updateItem} />} />
-          <Route path="/completed" element={<CompletedPage Items={Items} updateItem={updateItem} />} />
+          <Route path="/" element={<IncompletePage Items={Items} updateItem={updateItem} deleteItem={deleteItem} />} />
+          <Route path="/incomplete" element={<IncompletePage Items={Items} updateItem={updateItem} deleteItem={deleteItem} />} />
+          <Route path="/completed" element={<CompletedPage Items={Items} updateItem={updateItem} deleteItem={deleteItem} />} />
         </Routes>
       </div>
     </Router>
